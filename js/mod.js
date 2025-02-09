@@ -1,13 +1,11 @@
 let modInfo = {
-	name: "The ??? Tree",
-	author: "nobody",
-	pointsName: "points",
+	name: "It's Upgrade Tree 2 TMT edition",
+	author: "decio2022",
+	pointsName: "Points",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "",
-	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	offlineLimit: 0,  // In hours
 }
 
 // Set your version in num and name
@@ -33,7 +31,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return true
+	if (hasUpgrade("p", 11)) return true
 }
 
 // Calculate points/sec!
@@ -42,6 +40,9 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade("p", 12)) gain = gain.times("2")
+	if (hasUpgrade("p", 13)) gain = gain.times("1.5")
+	if (hasUpgrade("p", 14)) gain = gain.times(upgradeEffect("p", 14))
 	return gain
 }
 
