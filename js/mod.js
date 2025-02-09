@@ -4,7 +4,7 @@ let modInfo = {
 	pointsName: "Points",
 	modFiles: ["layers.js", "tree.js"],
 
-	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	initialStartPoints: new Decimal(0), // Used for hard resets and new players
 	offlineLimit: 0,  // In hours
 }
 
