@@ -6,6 +6,8 @@ addLayer("p", {
         unlocked: true,
     }},
     color: "#4BDC13",
+    resource: "Points",
+    baseResource: "Points",
     upgrades: {
         rows: 9,
         cols: 9,
